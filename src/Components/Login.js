@@ -11,7 +11,7 @@ const Login = ({handleLogin, user}) => {
     const realmId = useRef();
     useEffect(()=>{
         if(user?.id){
-            navigate("./main");
+            navigate("./feedkimnode/main");
         }
     },[user, navigate])
     
@@ -40,7 +40,7 @@ const Login = ({handleLogin, user}) => {
             <h1>FEED KIM</h1>
             <img style = {{marginLeft:"3vw"}}alt = "kim icon" src={kimicon} height ="30%"/>
             <div className = "Login-options">
-                <button className = "Option-button" onClick= {e => navigate("./guest")}>
+                <button className = "Option-button" onClick= {e => navigate("./feedkimnode/guest")}>
                     GUEST
                 </button>
                 <button className = "Option-button" onClick = {e => setLoginWindow(true)}>

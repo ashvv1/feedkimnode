@@ -35,15 +35,15 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path="/"
+            path="/feedkimnode"
             element={<Login handleLogin = {handleLogin} user={user}/>}
           />
           <Route
-            path="guest"
+            path="/feedkimnode/guest"
             element={<Guest />}
           />
           <Route
-            path="main"
+            path="/feedkimnode/main"
             element={
               user? 
                 (<Main user={user} />) :
