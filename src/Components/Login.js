@@ -9,7 +9,6 @@ const Login = ({handleLogin, user}) => {
     const userMail = useRef();
     const userPass = useRef();
     const realmId = useRef();
-    console.log(user);
     useEffect(()=>{
         if(user?.id){
             navigate("./main");
@@ -39,7 +38,7 @@ const Login = ({handleLogin, user}) => {
                 :
                 (null)}
             <h1>FEED KIM</h1>
-            <img alt = "kim icon" src={kimicon} height ="30%"/>
+            <img style = {{marginLeft:"3vw"}}alt = "kim icon" src={kimicon} height ="30%"/>
             <div className = "Login-options">
                 <button className = "Option-button" onClick= {e => navigate("./guest")}>
                     GUEST
