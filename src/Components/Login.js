@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect} from 'react';
 import { useNavigate } from 'react-router';
-const kimicon = require('../assets/kim.png')
+const kimicon = require('../assets/kim.png');
+
 
 
 const Login = ({handleLogin, user}) => {
@@ -11,7 +12,7 @@ const Login = ({handleLogin, user}) => {
     const realmId = useRef();
     useEffect(()=>{
         if(user?.id){
-            navigate("./main");
+            navigate("../feedkimnode/main");
         }
     },[user, navigate])
     
@@ -21,11 +22,11 @@ const Login = ({handleLogin, user}) => {
             (<div className = "Login-entry">
                 <div className = "Login-inputs">
                     <h2>Admin Login</h2>
-                    <input className ="Login-input" placeholder = "id" ref={realmId}>
+                    <input className ="Login-input" id ="id" name="id" placeholder = "id" ref={realmId}>
                     </input>
-                    <input className ="Login-input" placeholder = "user" ref={userMail}>
+                    <input className ="Login-input" id ="username" name="username" placeholder = "user" ref={userMail}>
                     </input>
-                    <input className = "Login-input" placeholder = "password" ref={userPass}>
+                    <input className = "Login-input" id="password" name="password" placeholder = "password" ref={userPass}>
                     </input>
                     <button className = "Login-button" onClick = {e => handleLogin({
                         email: userMail.current.value,
@@ -40,7 +41,7 @@ const Login = ({handleLogin, user}) => {
             <h1>FEED KIM</h1>
             <img alt = "kim icon" src={kimicon} height ="30%"/>
             <div className = "Login-options">
-                <button className = "Option-button" onClick= {e => navigate("./guest")}>
+                <button className = "Option-button" onClick= {e => navigate("../feedkimnode/guest")}>
                     GUEST
                 </button>
                 <button className = "Option-button" onClick = {e => setLoginWindow(true)}>

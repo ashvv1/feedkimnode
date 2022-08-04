@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 .App {
   text-align: center; 
 }
@@ -8,7 +10,14 @@
 
 h1 {
   font-size: 10vh;
-  font-weight: 200;
+  font-weight: 400;
+  font-family: 'Permanent Marker', cursive;
+}
+
+h4 {
+  font-size: 3vh;
+  font-weight: 400;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .App-logo {
@@ -20,18 +29,28 @@ h1 {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: url('./assets/background.jpg');
+  background-image: url('./assets/pawsbackground.jpg');
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.Splash-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/pawsbackground.jpg');
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 .Main-container {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: url('./assets/background.jpg');
+  background-image: url('./assets/pawsbackground.jpg');
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -42,20 +61,28 @@ h1 {
   margin-left: 2vw;
 }
 
+.Main-icon:active {
+  animation: wiggle-wiggle 2s forwards linear;
+}
+
 .Main-date {
   text-align: center;
   margin-top: 2%;
   font-size: 150%;
+  font-family: 'Permanent Marker', cursive;
 }
 
-.Dates-container {
+.Header-container {
   border-bottom: #282c34 3px dotted;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .Main-inputs {
   width: 80%;
-  background-color: #3b0c3946;
+  background-color: rgba(235, 205, 205, 0.863);
   height: 70%;
   border-radius: 20px;
   border: 2px solid black;
@@ -66,14 +93,15 @@ h1 {
 }
 
 .Food-inputs {
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.356);
+  width: 98%;
+  border-radius: 20px;
   height: 100%;
   display: flex;
   flex-direction: row;
-  padding-top: 2%;
+  padding-top: 5%;
   position: relative;
 }
+
 
 .Food-bag {
   height: 100%;
@@ -82,14 +110,30 @@ h1 {
   align-items: center;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid black;
   position: relative;
 }
 
+
+.Splash-greeting {
+  position: fixed;
+  width: 80vw;
+  height: 10vh;
+  z-index: 1000;
+  text-align: center;
+  font-size: 400%;
+  opacity: 0%;
+  animation: fade-in 4s forwards linear;
+  animation-delay: 500ms;
+}
+
 .Food-bag-icon {
-  width: 70%;
+  width: 30%;
   height: 50%;
   position: relative;
+}
+
+button {
+  color: black;
 }
 
 .Food-giveFood {
@@ -99,6 +143,7 @@ h1 {
   height: 97%;
   width: 97%;
   left: 1.5%;
+  bottom: 2%;
   border-radius: 20px;
   justify-content: space-evenly;
   display: flex;
@@ -108,12 +153,12 @@ h1 {
 }
 
 .Food-background {
-  opacity: 50%;
+  opacity: 30%;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 5%;
-  z-index: -1;
+  z-index: 2;
 }
 
 .Food-amount {
@@ -154,7 +199,7 @@ h1 {
 }
 
 .Button-feed {
-  background-color: pink;
+  background-color: rgba(255, 255, 255, 0.61);
   border-radius: 10px;
   height: 40%;
   width: 70%;
@@ -235,7 +280,7 @@ p {
   height: 30%;
   background-color: pink;
   border-radius: 20px;
-  font-size: 4vh;
+  font-size: 3.5vh;
 }
 
 .Login-input {
@@ -264,7 +309,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("./assets/background.jpg");
+  background-image: url("./assets/pawsbackground.jpg");
   position: absolute;
   width: 100%;
   height: 100%;
@@ -273,7 +318,7 @@ p {
 .Loading-icon {
   animation: logo-spin 10s infinite forwards;
   height: auto;
-  width: 80%;
+  width: 50%;
 }
 button {
   cursor: pointer;
@@ -308,6 +353,90 @@ button {
   align-items: center;
 }
 
+.Comments-icon {
+  padding: 2.2%;
+  cursor: pointer;
+}
+
+.Hist-icon {
+  padding: 2%;
+  cursor: pointer;
+}
+
+.Hist-list {
+  width: 70vw;
+  height: auto;
+  position: relative;
+  text-align: center;
+}
+
+td {
+  border-bottom: black solid 1px;
+}
+
+.Hist-window {
+  position: absolute;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.842);
+  padding: 2%;
+  height: 89%;
+  width: 93%;
+  left: 1.5%;
+  bottom: 2%;
+  border-radius: 20px;
+  justify-content: flex-start;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  box-shadow: inset 0px 0px 3px 3px black;
+}
+
+.Comments-window {
+  position: absolute;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.842);
+  padding: 2%;
+  height: 89%;
+  width: 93%;
+  left: 1.5%;
+  bottom: 2%;
+  border-radius: 20px;
+  justify-content: flex-start;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  box-shadow: inset 0px 0px 3px 3px black;
+}
+
+.Comments-input {
+  height: 100%;
+  width: 99%;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 8px 4px grey;
+  overflow-x: auto;
+  font-size: 200%;
+  padding: 0;
+}
+
+.Comment-review {
+  overflow: auto;
+}
+
+.Comments-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Comments-submit {
+    width: auto;
+    height: 50%;
+    background-color: pink;
+    border-radius:20px;
+    align-self: center;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -321,22 +450,78 @@ button {
   }
 }
 
-@media screen and (max-width: 320px) { 
+@keyframes wiggle-wiggle {
+  0% {
+    transform: rotate(-15deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+  60% {
+    transform: rotate(15deg);
+  }
+  80% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@media screen and (max-aspect-ratio: 1/1) { 
+
+  .Comments-input {
+    font-size: 200%;
+  }
+
+  h1 {
+    font-size: 13vw;
+    margin: 5vh 0px 4vh 0px;
+  }
+
+  td {
+    font-size: 4vw;
+  }
+  
+  .Main-inputs {
+    width: 90%
+  }
+
+  .Loading-icon {
+    width: 70%;
+  }
 
   .Login-button{
-    font-size: 25vw;
+    font-size: 7vw;
   }
 
   .Back-button{
-    font-size: 15vw;
+    font-size: 5vw;
   }
 
   .Button-feed {
-    font-size: 25vw;
+    font-size: 5vw;
   }
 
   .Login-input{
-    font-size: 25vw;
+    font-size: 5vw;
+    height: 5vh;
   }
+
+  .Food-bag-icon {
+     width: 70%;
+}
 }
   

@@ -5,6 +5,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Main from './Components/Main';
 import Guest from './Components/Guest';
 import Login from './Components/Login';
+import Splash from './Splash';
 import * as Realm from "realm-web";
 
 
@@ -36,6 +37,10 @@ function App() {
         <Routes>
           <Route
             path="/feedkimnode"
+            element={<Splash />}
+          />
+          <Route
+            path="/feedkimnode/login"
             element={<Login handleLogin = {handleLogin} user={user}/>}
           />
           <Route
@@ -51,6 +56,7 @@ function App() {
               
             }
           />
+         
         </Routes>
         </BrowserRouter>
       </>
